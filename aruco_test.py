@@ -1,5 +1,7 @@
+import numpy as np
 import cv2
 import cv2.aruco as aruco
+import glob
 
 cap = cv2.VideoCapture(0)
 
@@ -36,34 +38,47 @@ for fname in images:
 
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1],None,None)
 
+
 while (True):
-    # Capture frame-by-frame
     ret, frame = cap.read()
-    # print(frame.shape) #480x640
-    # Our operations on the frame come here
+    # operations on the frame come here
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
     parameters = aruco.DetectorParameters_create()
 
-    # print(parameters)
+    '''
+    detectMarkers(...)
+    detectMarkers(image, dictionary[, corners[, ids[, parameters[, rejectedI
+    mgPoints]]]]) -> corners, ids, rejectedImgPoints
+    '''
 
-    '''    detectMarkers(...)
-        detectMarkers(image, dictionary[, corners[, ids[, parameters[, rejectedI
-        mgPoints]]]]) -> corners, ids, rejectedImgPoints
-        '''
-    # lists of ids and the corners beloning to each id
+    #lists of ids and the corners beloning to each id
     corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, aruco_dict, parameters=parameters)
-    print(corners)
 
-    # It's working.
-    # my problem was that the cellphone put black all around it. The algorithm
-    # depends very much upon finding rectangular black blobs
 
-    gray = aruco.drawDetectedMarkers(gray, corners)
+    font = cv2.FONT_HERSHEY_SIMPLEX #font for displaying text (below)
 
-    # print(rejectedImgPoints)
+
+    if np.all(ids != None):
+
+        _,rvec, tvec = aruco.estimatePoseSingleMarkers(corners, 0.05, mtx, dist) #Estimate pose of each marker and return the values rvet and tvec---different from camera coefficients
+        #(rvec-tvec).any() # get rid of that nasty numpy value array error
+
+
+        aruco.drawAxis(frame, mtx, dist, rvec[0], tvec[0], 0.1) #Draw Axis
+        aruco.drawDetectedMarkers(frame, corners) #Draw A square around the markers
+
+
+        ###### DRAW ID #####
+        cv2.putText(frame, "Id: " + str(ids), (0,64), font, 1, (0,255,0),2,cv2.LINE_AA)
+
+
+    else:
+        ##### DRAW "NO IDS" #####
+        cv2.putText(frame, "No Ids", (0,64), font, 1, (0,255,0),2,cv2.LINE_AA)
+
     # Display the resulting frame
-    cv2.imshow('frame', gray)
+    cv2.imshow('frame',frame)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 

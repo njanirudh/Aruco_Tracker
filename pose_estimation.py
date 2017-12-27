@@ -50,7 +50,7 @@ objp[:,:2] = np.mgrid[0:7,0:6].T.reshape(-1,2)
 
 axis = np.float32([[3,0,0], [0,3,0], [0,0,-3]]).reshape(-1,3)
 
-for fname in glob.glob('calib_images/left*.jpg'):
+for fname in glob.glob('calib_images/left03.jpg'):
     img = cv2.imread(fname)
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     ret, corners = cv2.findChessboardCorners(gray, (7,6),None)
