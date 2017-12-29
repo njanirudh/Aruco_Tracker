@@ -46,12 +46,6 @@ while (True):
     aruco_dict = aruco.Dictionary_get(aruco.DICT_6X6_250)
     parameters = aruco.DetectorParameters_create()
 
-    '''
-    detectMarkers(...)
-    detectMarkers(image, dictionary[, corners[, ids[, parameters[, rejectedI
-    mgPoints]]]]) -> corners, ids, rejectedImgPoints
-    '''
-
     #lists of ids and the corners beloning to each id
     corners, ids, rejectedImgPoints = aruco.detectMarkers(gray, aruco_dict, parameters=parameters)
 
@@ -61,7 +55,7 @@ while (True):
 
     if np.all(ids != None):
 
-        _,rvec, tvec = aruco.estimatePoseSingleMarkers(corners, 0.05, mtx, dist) #Estimate pose of each marker and return the values rvet and tvec---different from camera coefficients
+        _,rvec, tvec = aruco.estimatePoseSingleMarkers(corners[0], 0.05, mtx, dist) #Estimate pose of each marker and return the values rvet and tvec---different from camera coefficients
         #(rvec-tvec).any() # get rid of that nasty numpy value array error
 
 
