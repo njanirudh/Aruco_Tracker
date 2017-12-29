@@ -3,7 +3,7 @@ import cv2
 import cv2.aruco as aruco
 import glob
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 # termination criteria
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
@@ -55,16 +55,20 @@ while (True):
 
     if np.all(ids != None):
 
-        _,rvec, tvec = aruco.estimatePoseSingleMarkers(corners[0], 0.05, mtx, dist) #Estimate pose of each marker and return the values rvet and tvec---different from camera coefficients
+        rvec, tvec ,_ = aruco.estimatePoseSingleMarkers(corners, 0.05, mtx, dist) #Estimate pose of each marker and return the values rvet and tvec---different from camera coefficients
         #(rvec-tvec).any() # get rid of that nasty numpy value array error
 
-
-        aruco.drawAxis(frame, mtx, dist, rvec[0], tvec[0], 0.1) #Draw Axis
+        for i in range(0, ids.size):
+            aruco.drawAxis(frame, mtx, dist, rvec[i], tvec[i], 0.1)  # Draw Axis
         aruco.drawDetectedMarkers(frame, corners) #Draw A square around the markers
 
 
         ###### DRAW ID #####
-        cv2.putText(frame, "Id: " + str(ids), (0,64), font, 1, (0,255,0),2,cv2.LINE_AA)
+        strg = ''
+        for i in range(0, ids.size):
+            strg += str(ids[i][0])+', '
+
+        cv2.putText(frame, "Id: " + strg, (0,64), font, 1, (0,255,0),2,cv2.LINE_AA)
 
 
     else:
