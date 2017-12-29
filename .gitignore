@@ -99,3 +99,9 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+#pycharm
+.idea/Aruco_Tracker.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
