@@ -6,22 +6,16 @@
 * Python 3.x
 * Numpy
 * OpenCV 3.3+ 
+* OpenCV 3.3+ Contib modules
 
-## Installation 
+## Scripts
+1. **camera_calibration.py** : Shows the steps required to calibrate a camera using opencv default calibration images and writes the value to a file.
 
-### Windows
-1. Install latest python from the [official python website](https://www.python.org/downloads/).
-2. Install [PyCharm Free version](https://www.jetbrains.com/pycharm/download/).   
-3. Open PyCharm after successful installation and setup the dependencies as following :-    
-    * Goto **File -> Settings -> Project : -> Project Interpreter**    
-    * Select correct project interpretor from the drop down menu.    
-    * Add new dependencies by pressing the **plus button** on the right hand side of the packagelist.     
-    * In the available packages searchbar find and install the following packages :-      
-       **numpy**     
-       **opencv-python**          
-       **opencv-contrib-python**     
+2. **extract_calibration.py**  : This script shows how to open and extract the calibration values from a file.
 
-4. After installing the dependencies run  __pose_estimation.py__ for testing.
+3. **pose_estimation.py**  : Steps to extract pose of an checkerboard marker.
+
+4. **aruco_tracker.py** : Extracts pose of multiple aruco markers from a webcam stream.
 
 
 
