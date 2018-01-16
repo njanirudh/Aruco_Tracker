@@ -43,6 +43,7 @@ ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.sh
 cv_file = cv2.FileStorage("calib_images/test.yaml", cv2.FILE_STORAGE_WRITE)
 cv_file.write("camera_matrix", mtx)
 cv_file.write("dist_coeff", dist)
+
 # note you *release* you don't close() a FileStorage object
 cv_file.release()
 
