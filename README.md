@@ -6,7 +6,7 @@
 * Python 3.x
 * Numpy
 * OpenCV 3.3+ 
-* OpenCV 3.3+ Contib modules
+* OpenCV 3.3+ Contrib modules
 
 ## Scripts
 1. **camera_calibration.py** : Shows the steps required to calibrate a camera using opencv default calibration images and writes the value to a file.
