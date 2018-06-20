@@ -1,3 +1,5 @@
+<img src="https://docs.opencv.org/3.1.0/markers.jpg" height="100">          <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/OpenCV_Logo_with_text.png" height="100">
+
 # Aruco Tracker
 
 **Aruco Tracker** is a small program written in python to find a registered aruco marker and then run a pose estimation algorithm on it.
