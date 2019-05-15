@@ -1,9 +1,10 @@
 import cv2
 
-# FILE_STORAGE_READ
+# File storage in OpenCV
 cv_file = cv2.FileStorage("calib_images/test.yaml", cv2.FILE_STORAGE_READ)
 
-# Note : we also have to specify the type to retrieve otherwise we only get a
+# Note : we also have to specify the type
+# to retrieve otherwise we only get a 'None'
 # FileNode object back instead of a matrix
 camera_matrix = cv_file.getNode("camera_matrix").mat()
 dist_matrix = cv_file.getNode("dist_coeff").mat()
