@@ -8,7 +8,8 @@ WAIT_TIME = 100
 # termination criteria for iterative algorithm
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 
-# checkerboard dimensions
+# generalizable checkerboard dimensions
+# https://stackoverflow.com/questions/31249037/calibrating-webcam-using-python-and-opencv-error?rq=1
 cbrow = 6
 cbcol = 7
 
