@@ -1,3 +1,11 @@
+"""
+Framework   : OpenCV Aruco
+Description : Extracting calibration from file.
+Status      : Running
+References  :
+    1) https://answers.opencv.org/question/31207/how-do-i-load-an-opencv-generated-yaml-file-in-python/
+"""
+
 import cv2
 
 # File storage in OpenCV
