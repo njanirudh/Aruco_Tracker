@@ -37,6 +37,7 @@ ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.sh
 
 
 # Function to draw the axis
+# Draw axis function can also be used.
 def draw(img, corners, imgpts):
     corner = tuple(corners[0].ravel())
     img = cv2.line(img, corner, tuple(imgpts[0].ravel()), (255, 0, 0), 5)
@@ -50,7 +51,7 @@ objp[:,:2] = np.mgrid[0:7,0:6].T.reshape(-1,2)
 
 axis = np.float32([[3,0,0], [0,3,0], [0,0,-3]]).reshape(-1,3)
 
-for fname in glob.glob('calib_images/left03.jpg'):
+for fname in glob.glob('calib_images/checkerboard/left03.jpg'):
     img = cv2.imread(fname)
     gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
     ret, corners = cv2.findChessboardCorners(gray, (7,6),None)
