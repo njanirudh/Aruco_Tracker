@@ -16,8 +16,7 @@ from cv2 import aruco
 
 # This requires a set of images or a video taken with the camera you want to calibrate
 # All images used should be the same size, which if taken with the same camera shouldn't be a problem
-# images = glob.glob('/home/nj/NJ/Remote_Project/Aruco_Research/Calibration/oneplus/*.jpg')
-images = glob.glob('/home/nj/NJ/Remote_Project/Aruco_Research/Calibration/iPhone/*.jpg')
+images = glob.glob('calib_images/charuco/*.jpg')
 
 # ChAruco board variables
 CHARUCOBOARD_ROWCOUNT = 7
