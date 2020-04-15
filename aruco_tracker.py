@@ -1,3 +1,12 @@
+"""
+Framework   : OpenCV Aruco
+Description : Calibration of camera and using that for finding pose of multiple markers
+Status      : Working
+References  :
+    1) https://docs.opencv.org/3.4.0/d5/dae/tutorial_aruco_detection.html
+    2) https://docs.opencv.org/3.4.3/dc/dbb/tutorial_py_calibration.html
+    3) https://docs.opencv.org/3.1.0/d5/dae/tutorial_aruco_detection.html
+"""
 
 import numpy as np
 import cv2
@@ -104,7 +113,3 @@ cap.release()
 cv2.destroyAllWindows()
 
 
-# References
-# 1. https://docs.opencv.org/3.4.0/d5/dae/tutorial_aruco_detection.html
-# 2. https://docs.opencv.org/3.4.3/dc/dbb/tutorial_py_calibration.html
-# 3. https://docs.opencv.org/3.1.0/d5/dae/tutorial_aruco_detection.html
