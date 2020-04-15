@@ -1,3 +1,11 @@
+"""
+Framework   : OpenCV Aruco
+Description : Calibration using checkerboard 
+Status      : Running
+References  :
+    1) https://stackoverflow.com/questions/31249037/calibrating-webcam-using-python-and-opencv-error?rq=1
+"""
+
 import numpy as np
 import cv2
 import glob
