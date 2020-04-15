@@ -4,6 +4,7 @@ Description : Calibration using checkerboard
 Status      : Running
 References  :
     1) https://stackoverflow.com/questions/31249037/calibrating-webcam-using-python-and-opencv-error?rq=1
+    2) https://calib.io/pages/camera-calibration-pattern-generator
 """
 
 import numpy as np
