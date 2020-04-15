@@ -6,7 +6,6 @@ References  :
     1) https://github.com/kyle-bersani/opencv-examples/blob/master/CalibrationByCharucoBoard/CalibrateCamera.py
     2) https://calib.io/pages/camera-calibration-pattern-generator
     3) https://github.com/opencv/opencv_contrib/tree/master/modules/aruco/misc/pattern_generator
-    4) https://calib.io/pages/camera-calibration-pattern-generator
 """
 
 import glob
