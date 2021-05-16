@@ -12,7 +12,7 @@
 * OpenCV 3.3+ Contrib modules
 
 ## Scripts
-1. **camera_calibration.py** : Shows the steps required to calibrate a camera using opencv default calibration images and writes the value to a file.
+1. **camera_calibration.py** : Shows the steps required to calibrate a camera using opencv default calibration images and write the value to a file.
 
 2. **extract_calibration.py**  : This script shows how to open and extract the calibration values from a file.
 
