@@ -13,7 +13,7 @@ import cv2
 import cv2.aruco as aruco
 import glob
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 ####---------------------- CALIBRATION ---------------------------
 # termination criteria for the iterative algorithm
