@@ -30,7 +30,7 @@ imgpoints = [] # 2d points in image plane.
 
 # iterating through all calibration images
 # in the folder
-images = glob.glob('calib_images/*.jpg')
+images = glob.glob('calib_images/checkerboard/*.jpg')
 
 for fname in images:
     img = cv2.imread(fname)
