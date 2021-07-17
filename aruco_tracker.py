@@ -57,6 +57,10 @@ ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.sh
 ###------------------ ARUCO TRACKER ---------------------------
 while (True):
     ret, frame = cap.read()
+    #if ret returns false, there is likely a problem with the webcam/camera.
+    #In that case uncomment the below line, which will replace the empty frame 
+    #with a test image used in the opencv docs for aruco at https://www.docs.opencv.org/4.5.3/singlemarkersoriginal.jpg
+    # frame = cv2.imread('./images/test image.jpg') 
 
     # operations on the frame
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
