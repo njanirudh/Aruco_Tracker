@@ -89,7 +89,7 @@ while (True):
 
         for i in range(0, ids.size):
             # draw axis for the aruco markers
-            aruco.drawAxis(frame, mtx, dist, rvec[i], tvec[i], 0.1)
+            cv2.drawFrameAxes(frame, mtx, dist, rvec[i], tvec[i], 0.1)
 
         # draw a square around the markers
         aruco.drawDetectedMarkers(frame, corners)
